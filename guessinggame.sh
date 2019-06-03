@@ -1,5 +1,5 @@
 
-let numfiles="$(ls|wc -l)"
+let numfiles="$(ls -l|wc -l)"
 echo "Guess number of files"
 
 function guess {
