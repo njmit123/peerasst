@@ -1,4 +1,5 @@
 The title is guessing game
-make file run on Fri May 31 17:58:46 UTC 2019
-Number of lines :
-22
+make file run on:
+Tue Jun  4 00:01:32 IST 2019
+Number of lines:
+36
