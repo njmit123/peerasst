@@ -1,22 +1,28 @@
+
 let numfiles="$(ls|wc -l)"
-echo "Guess number of files!"
-read inp
+echo "Guess number of files"
 
-while [[ $inp != $numfiles ]]
-do
-	echo "your guess was $inp"
-	if [[ inp -lt $numfiles ]]
+function guess {
+	read inp
+
+	while [[ $inp != $numfiles ]]
+	do
+		echo "Your guess was $inp"
+		if [[ $inp -lt $numfiles ]]
+		then
+			echo "Too low!"
+			read inp
+		elif [[ $inp -gt $numfiles ]]
+		then
+			echo "Too high!"
+			read inp
+		fi
+	done
+	
+	if [[ $inp -eq $numfiles ]]
 	then
-		echo "too low"
-		read inp
-	elif [[ $inp -gt $numfiles ]]
-	then
-		echo "too high"
-		read inp
+		echo "Right guess!"
 	fi
-done
+}
 
-if [[ $inp -eq $numfiles ]]
-then
-	echo "Right guess!"
-fi
+guess
